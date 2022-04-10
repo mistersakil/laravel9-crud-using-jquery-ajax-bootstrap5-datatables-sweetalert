@@ -11,6 +11,10 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 </head>
 
@@ -21,28 +25,25 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <nav class="navbar navbar-light bg-light">
+                        <nav class="navbar navbar-light bg-primary">
                             <div class="container-fluid">
-                                <a class="navbar-brand">
+                                <a class="navbar-brand text-light">
                                     Laravel CRUD
                                 </a>
                                 <div class="d-flex">
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#user_add_modal">Add
-                                        new user</button>
+                                    <button type="button" class="btn btn-light" data-bs-toggle="modal"
+                                        data-bs-target="#user_add_modal">
+                                        <i class="fa-solid fa-plus"></i>
+                                        Add new user
+                                    </button>
                                 </div>
                             </div>
                         </nav>
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <strong>Laravel CRUD </strong> Using Bootstrap, jQuery, AJAX, Datatables,
-                            SweetAlert
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                aria-label="Close"></button>
-                        </div>
                     </div>
                     <div class="card-body table-responsive">
+                        <h3 class="text-center text-secondary">List of users</h3>
                         <table class="table table-bordered caption-top">
-                            <caption>List of users</caption>
+
                             <thead class="bg-primary text-light">
                                 <tr>
                                     <th scope="col">#</th>
@@ -80,6 +81,15 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="card-footer">
+
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Laravel CRUD </strong> Using Bootstrap, jQuery, AJAX, Datatables,
+                            SweetAlert
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                        </div>
                     </div>
                 </div>
             </div>
