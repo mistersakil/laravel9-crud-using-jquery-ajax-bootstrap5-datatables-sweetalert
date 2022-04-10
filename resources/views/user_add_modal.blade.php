@@ -5,8 +5,12 @@
                 <h5 class="modal-title" id="user_add_modal_label">Add new user</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <form>
+
+            <form method="post" enctype="multipart/form-data" id="user_add_form" name="user_add_form"
+                action="{{ route('users.store') }}">
+                @csrf
+                @method('post')
+                <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
@@ -40,8 +44,7 @@
 
                         <div class="col-md-12">
                             <div class="form-floating mb-3">
-                                <select class="form-select" id="designation"
-                                    aria-label="Floating label select example">
+                                <select class="form-select" id="designation" name="designation">
                                     <option value="Software Developer" selected>Software Developer</option>
                                     <option value="Frontend Developer">Frontend Developer</option>
                                     <option value="Full Stack Developer">Full Stack Developer</option>
@@ -58,12 +61,13 @@
                         </div>
 
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save</button>
-            </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="user_add_btn">Save</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

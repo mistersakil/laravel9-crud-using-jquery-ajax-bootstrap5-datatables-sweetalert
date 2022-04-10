@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -21,9 +23,8 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
     }
 
     /**
@@ -34,8 +35,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $file = $request->file('avatar');
+        $file_name = time() . '.' . $file->getClientOriginalExtension();
+        $file->storeAs('public/images', $file_name);
+        $inputs = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'phone' => $request->phone,
+            'avatar' => $file_name,
+            'designation' => $request->designation
+        ];
+        User::create($inputs);
+        return response()->json(['status' => 200, 'message' => 'Added Sucessfully']);
     }
+
 
     /**
      * Display the specified resource.

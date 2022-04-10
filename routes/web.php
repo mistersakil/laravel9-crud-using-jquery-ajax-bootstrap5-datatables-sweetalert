@@ -16,5 +16,5 @@ use App\Http\Controllers\UserController;
 
 Route::controller(UserController::class)->group(function () {
     Route::get('/', 'index');
-    Route::post('/', 'store');
+    Route::post('/', 'store')->name('users.store');
 });
